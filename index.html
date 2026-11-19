@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MESH VENTURES · Events, Weddings, Ruracio &amp; Celebrations</title>
+<meta name="description" content="MESH VENTURES plans ruracios, weddings, birthday parties, showers, graduations and corporate events. Packages from KES 50,000. Plan your budget and book online.">
+<meta name="theme-color" content="#141010">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b1426'/%3E%3Cpath d='M14 46V18l18 18 18-18v28' fill='none' stroke='%23f5eedf' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --burg:#6b1426; --burg-d:#4f0e1c;
+  --black:#141010; --black2:#221a1b;
+  --cream:#f5eedf; --cream2:#eadfc8; --cream3:#fbf7ee; --cream-d:#d9cba9;
+  --text:#141010; --muted:#5d5253;
+  --line:rgba(20,16,16,.16); --r:16px;
+  --font:'Quicksand',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;font-size:15px}
+body{font-family:var(--font);color:var(--text);background:var(--cream);line-height:1.65;font-weight:500;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:60px 0;position:relative}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;display:inline-block;vertical-align:-.125em}
+.dark{background:var(--black);color:var(--cream)}
+.dark .muted{color:var(--cream-d)}
+.muted{color:var(--muted)}
+
+/* type */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--burg)}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.dark .eyebrow,.hero .eyebrow,.book .eyebrow,.cta .eyebrow{color:var(--cream-d)}
+h1,h2,h3{font-weight:700;line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(1.65rem,3vw,2.2rem);margin:10px 0 10px}
+h2 em,h1 em{font-style:normal;color:var(--burg)}
+.dark h2 em,.hero h1 em,.book h2 em,.cta h2 em{color:var(--cream-d)}
+.lead{font-size:1rem;max-width:580px}
+.head{margin-bottom:32px}
+.head.center{text-align:center}.head.center .lead{margin-inline:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:11px 22px;border-radius:999px;font-weight:700;font-size:.88rem;transition:.25s;white-space:nowrap;border:2px solid transparent}
+.btn .ic{font-size:1.1em}
+.btn-burg{background:var(--burg);color:var(--cream);border-color:var(--burg)}
+.btn-burg:hover{background:var(--black);border-color:var(--black);transform:translateY(-3px)}
+.btn-cream{background:var(--cream);color:var(--burg);border-color:var(--cream)}
+.btn-cream:hover{background:transparent;color:var(--cream);transform:translateY(-3px)}
+.btn-ghost{border-color:var(--cream);color:var(--cream)}
+.btn-ghost:hover{background:var(--cream);color:var(--black)}
+.btn-line{border-color:var(--black)}.btn-line:hover{background:var(--black);color:var(--cream)}
+.btn[disabled]{opacity:.5;pointer-events:none}
+
+/* nav */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:.3s;padding:18px 0}
+header.nav.scrolled{background:var(--black);padding:10px 0;box-shadow:0 6px 24px -12px #000}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--cream)}
+.logo svg.mark{width:44px;height:44px}
+.logo b{font-size:1.4rem;letter-spacing:.16em;line-height:1;font-weight:700;display:block}
+.logo small{display:block;font-size:.58rem;letter-spacing:.42em;color:var(--cream-d);font-weight:700;margin-top:4px}
+.links{display:flex;gap:28px;align-items:center}
+.links a{color:var(--cream);font-size:.9rem;font-weight:700;position:relative;padding:4px 0}
+.links a.btn-cream{color:var(--burg)}
+.links a.btn-cream:hover{color:var(--cream)}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--cream);transition:.3s}
+.links a:not(.btn):hover::after{width:100%}
+.mclose{display:none}
+.scrim{position:fixed;inset:0;background:rgba(20,16,16,.65);z-index:55;opacity:0;pointer-events:none;transition:.3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:2px solid var(--cream);position:relative}
+.burger i,.burger i::before,.burger i::after{position:absolute;left:10px;width:16px;height:2px;background:var(--cream);content:"";transition:.3s}
+.burger i{top:19px}.burger i::before{top:-6px;left:0}.burger i::after{top:6px;left:0}
+.burger.open i{background:transparent}.burger.open i::before{top:0;transform:rotate(45deg)}.burger.open i::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{min-height:auto;display:flex;align-items:center;padding:112px 0 56px;color:var(--cream);overflow:hidden;background-color:var(--black);background-image:var(--hero,none);background-size:cover;background-position:center}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(20,16,16,.8)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2rem,4.4vw,3.1rem);margin:12px 0 14px}
+.hero p.lead{color:var(--cream-d);font-size:1rem}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 28px}
+.stats{display:flex;gap:30px;flex-wrap:wrap}
+.stats div{border-left:2px solid var(--burg);padding-left:18px}
+.stats b{font-size:1.8rem;color:var(--cream);line-height:1;display:block;font-weight:700}
+.stats span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-d);font-weight:700}
+.price-card{background:var(--burg);border:2px solid var(--cream);border-radius:20px;padding:24px}
+.price-card h3{font-size:1.15rem;margin-bottom:12px}
+.price-card .from{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-d);font-weight:700}
+.price-card .big{font-size:2.3rem;line-height:1;margin:4px 0 12px;font-weight:700}
+.chk{list-style:none;display:grid;gap:11px}
+.chk li{display:flex;gap:12px;align-items:flex-start}
+.chk li::before{content:"";flex:none;width:13px;height:7px;border-left:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(-45deg);margin-top:.5em}
+.price-card .chk{margin-bottom:20px;font-size:.9rem;gap:8px}
+
+/* ribbon */
+.ribbon{background:var(--burg);color:var(--cream);overflow:hidden;padding:12px 0;white-space:nowrap}
+.ribbon div{display:inline-block;animation:slide 34s linear infinite;font-size:.95rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ribbon span{margin:0 26px}.ribbon span::after{content:"";display:inline-block;width:8px;height:8px;background:var(--cream);transform:rotate(45deg);margin-left:52px;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.collage{position:relative;height:380px}
+.collage .c{position:absolute;border-radius:20px;background-size:cover;background-position:center;border:6px solid var(--cream)}
+.collage .c1{inset:0 28% 22% 0;background-color:var(--burg);background-image:var(--a1)}
+.collage .c2{inset:38% 0 0 34%;background-color:var(--black);background-image:var(--a2)}
+.badge{position:absolute;left:4%;bottom:6%;background:var(--burg);color:var(--cream);border-radius:50%;width:100px;height:100px;display:grid;place-items:center;text-align:center;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.3;border:4px solid var(--cream);font-weight:700}
+.badge b{font-size:1.5rem;display:block;letter-spacing:0;line-height:1.1}
+.pillars{display:grid;gap:14px;margin-top:22px}
+.pillar{display:flex;gap:16px}
+.ibox{flex:none;width:42px;height:42px;border-radius:12px;background:var(--burg);color:var(--cream);display:grid;place-items:center;font-size:1.2rem}
+.pillar b{display:block;font-size:.95rem}.pillar span.muted{font-size:.88rem}
+
+/* services */
+.services{background:var(--cream2)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--cream3);border-radius:var(--r);padding:20px 18px;border:2px solid var(--black);transition:.3s;display:flex;flex-direction:column;position:relative}
+.card:hover{transform:translateY(-8px);background:var(--burg);color:var(--cream);border-color:var(--burg)}
+.card:hover p,.card:hover .pr,.card:hover .pr b,.card:hover .go{color:var(--cream)}
+.card:hover .ibox{background:var(--cream);color:var(--burg)}
+.card .ibox{margin-bottom:12px;width:44px;height:44px;font-size:1.25rem;transition:.3s}
+.card h3{font-size:1.05rem;margin-bottom:6px;line-height:1.25}
+.card p{font-size:.84rem;line-height:1.55;color:var(--muted);flex:1;transition:.3s}
+.card .pr{margin:12px 0 10px;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.card .pr b{display:block;font-size:1.2rem;letter-spacing:0;color:var(--black);text-transform:none}
+.card .go{font-weight:700;font-size:.84rem;color:var(--burg);display:inline-flex;gap:8px;align-items:center}
+
+/* packages */
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.pack{background:var(--black2);border:2px solid var(--cream-d);border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;position:relative;transition:.3s}
+.pack:hover{transform:translateY(-8px);border-color:var(--cream)}
+.pack.pop{background:var(--burg);border-color:var(--cream)}
+.pack .tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--cream);color:var(--burg);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:99px}
+.pack h3{font-size:1.35rem}
+.pack .amt{font-size:1.8rem;color:var(--cream);margin:8px 0 2px;line-height:1;font-weight:700}
+.pack .sub{font-size:.78rem;color:var(--cream-d);margin-bottom:16px}
+.pack .chk{margin-bottom:20px;flex:1;font-size:.88rem;gap:8px}
+
+/* planner */
+.planner{background:var(--cream)}
+.plan-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:start}
+.panel{background:var(--cream3);border:2px solid var(--black);border-radius:20px;padding:24px}
+.panel h3{font-size:1.2rem;margin-bottom:14px}
+.step{margin-bottom:22px}.step:last-child{margin-bottom:0}
+.step>label:not(.switch),.lab{display:block;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:10px}
+.field{width:100%;padding:10px 14px;border:2px solid var(--line);border-radius:10px;font-size:.92rem;background:#fff;transition:.2s;outline:0}
+.field:focus{border-color:var(--burg);box-shadow:0 0 0 4px rgba(107,20,38,.15)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tier{position:relative;display:block}
+.tier input{position:absolute;opacity:0;pointer-events:none}
+.tier span{display:block;border:2px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;transition:.2s;height:100%;background:#fff}
+.tier b{font-size:1rem;display:block}
+.tier small{color:var(--muted);font-size:.72rem;display:block;line-height:1.4}
+.tier em{font-style:normal;font-weight:700;font-size:.85rem;color:var(--burg);display:block;margin-top:6px}
+.tier input:checked+span{border-color:var(--burg);background:var(--cream2);box-shadow:0 0 0 3px rgba(107,20,38,.2)}
+.tier input:focus-visible+span{outline:3px solid var(--black)}
+.guest-row{display:grid;grid-template-columns:1fr 110px;gap:18px;align-items:center}
+input[type=range]{width:100%;accent-color:var(--burg);height:6px}
+.addons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.addon{position:relative;display:block}
+.addon input{position:absolute;opacity:0}
+.addon span{display:flex;justify-content:space-between;gap:10px;align-items:center;border:2px solid var(--line);border-radius:12px;padding:9px 12px;font-size:.82rem;cursor:pointer;transition:.2s;font-weight:700;background:#fff}
+.addon small{display:block;color:var(--muted);font-weight:500;font-size:.75rem}
+.addon em{font-style:normal;font-size:.78rem;color:var(--burg);font-weight:700;white-space:nowrap}
+.addon input:checked+span{border-color:var(--burg);background:var(--cream2)}
+.addon input:focus-visible+span{outline:3px solid var(--black)}
+.switch{display:flex;gap:12px;align-items:center;font-size:.9rem;margin-top:14px;cursor:pointer;font-weight:600}
+.switch input{accent-color:var(--burg);width:18px;height:18px}
+
+.result{position:sticky;top:96px;background:var(--black);color:var(--cream);border-radius:20px;padding:24px}
+.result h3{font-size:1.05rem;color:var(--cream-d)}
+.total{font-size:2.1rem;line-height:1.05;margin:6px 0 2px;font-weight:700}
+.total-note{font-size:.76rem;color:var(--cream-d);margin-bottom:14px}
+.lines{list-style:none;display:grid;gap:10px;margin-bottom:16px;font-size:.82rem}
+.lines li{display:grid;gap:5px}
+.lines .row{display:flex;justify-content:space-between;gap:12px;color:var(--cream-d)}
+.lines .row b{color:var(--cream);white-space:nowrap}
+.bar{height:5px;background:rgba(245,238,223,.18);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--cream);border-radius:9px;transition:width .5s}
+.sum{border-top:2px dashed rgba(245,238,223,.3);padding-top:16px;display:grid;gap:6px;font-size:.84rem}
+.sum div{display:flex;justify-content:space-between;color:var(--cream-d)}.sum b{color:var(--cream)}
+.meter{margin:18px 0 6px;font-size:.86rem;padding:12px 14px;border-radius:12px;background:var(--cream);color:var(--black);font-weight:700}
+.meter.over{background:var(--burg);color:var(--cream)}
+.result .btn{width:100%;margin-top:16px}
+.mini-actions{display:flex;gap:10px;margin-top:10px}
+.mini-actions .btn{margin:0;padding:11px 12px;font-size:.8rem;flex:1}
+
+/* gallery */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.chip{padding:7px 16px;border-radius:99px;border:2px solid var(--cream-d);font-size:.85rem;font-weight:700;transition:.2s}
+.chip:hover{border-color:var(--cream)}.chip.on{background:var(--burg);color:var(--cream);border-color:var(--burg)}
+.gal{columns:3;column-gap:14px}
+.tile{break-inside:avoid;margin-bottom:14px;border-radius:14px;overflow:hidden;position:relative;cursor:zoom-in;background-color:var(--g,#6b1426);background-image:var(--img);background-size:cover;background-position:center;min-height:170px}
+.tile.t2{min-height:240px}.tile.t3{min-height:205px}
+.tile::after{content:attr(data-cap);position:absolute;inset:auto 0 0 0;padding:20px;background:rgba(20,16,16,.82);color:var(--cream);font-size:1rem;font-weight:700;opacity:0;transform:translateY(10px);transition:.3s}
+.tile:hover::after{opacity:1;transform:none}
+.tile.hide{display:none}
+.center-btn{text-align:center;margin-top:20px}
+.lightbox{position:fixed;inset:0;background:rgba(20,16,16,.95);z-index:100;display:none;place-items:center;padding:30px}
+.lightbox.on{display:grid}
+.lightbox .pic{width:min(1000px,100%);height:min(76vh,700px);border-radius:18px;background-size:contain;background-position:center;background-repeat:no-repeat}
+.lightbox p{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:var(--cream);font-size:1.2rem;font-weight:700}
+.x{position:absolute;top:20px;right:24px;width:48px;height:48px;border-radius:50%;background:var(--cream);color:var(--black);font-size:1.4rem;display:grid;place-items:center}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.st{padding:20px 18px;border-radius:var(--r);background:var(--cream3);border:2px solid var(--black);position:relative}
+.st .ibox{margin-bottom:12px}
+.st .n{position:absolute;top:16px;right:18px;font-size:1.7rem;font-weight:700;color:var(--burg);opacity:.25;line-height:1}
+.st h3{font-size:1.05rem;margin-bottom:4px}.st p{font-size:.85rem;color:var(--muted)}
+
+/* booking */
+.book{background:var(--burg);color:var(--cream)}
+.book .muted{color:var(--cream-d)}
+.book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:36px;align-items:start}
+.book .panel{background:var(--cream3);color:var(--text)}
+.snap{margin-top:20px;border:2px solid var(--cream);border-radius:16px;padding:18px;background:var(--burg-d)}
+.snap h3{font-size:1.05rem;margin-bottom:10px}
+.snap dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:.84rem}
+.snap dt{color:var(--cream-d)}.snap dd{text-align:right;font-weight:700}
+.snap .t{border-top:2px dashed rgba(245,238,223,.35);padding-top:8px;margin-top:4px;font-size:1.15rem;font-weight:700;color:var(--cream)}
+.snap a{text-decoration:underline;font-weight:700}
+.contact-list{list-style:none;display:grid;gap:10px;margin-top:20px;font-size:.9rem}
+.contact-list li{display:flex;gap:14px;align-items:center;font-weight:600}
+.contact-list .ibox{background:var(--cream);color:var(--burg);width:36px;height:36px;font-size:1rem;border-radius:10px}
+form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form .g{margin-bottom:12px}
+form label.lab{margin-bottom:7px}
+.err{color:var(--burg);font-size:.78rem;margin-top:4px;display:none;font-weight:700}.g.bad .err{display:block}.g.bad .field{border-color:var(--burg)}
+.note{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
+
+/* faq */
+details{background:var(--cream3);border:2px solid var(--black);border-radius:14px;padding:0 18px;transition:.25s;align-self:start}
+details[open]{background:var(--cream2)}
+summary{list-style:none;cursor:pointer;padding:14px 0;font-weight:700;font-size:.92rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.7rem;color:var(--burg);transition:.3s;font-weight:600;line-height:1}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 16px;color:var(--muted);font-size:.86rem}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+
+/* cta */
+.cta{background-color:var(--burg);background-image:var(--ctabg,none);background-size:cover;background-position:center;color:var(--cream);text-align:center;padding:64px 0;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:rgba(107,20,38,.9)}
+.cta .wrap{position:relative}
+.cta h2{font-size:clamp(1.8rem,3.6vw,2.5rem)}
+.cta .cta-row{justify-content:center;margin:22px 0 0}
+
+/* footer */
+footer{background:var(--black);color:var(--cream-d);padding:44px 0 20px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:30px}
+footer h4{color:var(--cream);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+footer ul{list-style:none;display:grid;gap:10px}footer a:hover{color:var(--cream);text-decoration:underline}
+.news{display:flex;gap:8px;margin-top:12px}
+.news input{flex:1;min-width:0;padding:12px 16px;border-radius:99px;border:2px solid var(--cream-d);background:transparent;color:var(--cream);outline:0}
+.news input:focus{border-color:var(--cream)}
+.copy{border-top:2px solid var(--black2);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem}
+
+/* modal, toast, floating */
+.modal{position:fixed;inset:0;background:rgba(20,16,16,.85);z-index:110;display:none;place-items:center;padding:20px}
+.modal.on{display:grid}
+.mbox{background:var(--cream);border-radius:22px;padding:30px 28px;max-width:520px;width:100%;text-align:center;animation:pop .4s cubic-bezier(.2,1.2,.3,1);max-height:92vh;overflow:auto;border:3px solid var(--black)}
+@keyframes pop{from{transform:scale(.9);opacity:0}}
+.tick{width:60px;height:60px;border-radius:50%;background:var(--burg);color:var(--cream);display:grid;place-items:center;margin:0 auto 18px;font-size:2.2rem}
+.mbox h3{font-size:1.5rem;margin-bottom:6px}
+.ref{display:inline-block;margin:14px 0;padding:8px 18px;border-radius:99px;background:var(--burg);color:var(--cream);font-weight:700;letter-spacing:.12em}
+.mbox .acts{display:grid;gap:10px;margin-top:22px}
+.mbox .small{font-size:.84rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,120px);background:var(--black);color:var(--cream);padding:14px 24px;border-radius:99px;z-index:120;font-weight:700;font-size:.9rem;transition:.4s cubic-bezier(.2,1.2,.3,1);max-width:90vw;text-align:center;border:2px solid var(--cream)}
+.toast.on{transform:translate(-50%,0)}
+.wa{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;background:var(--burg);color:var(--cream);display:grid;place-items:center;z-index:70;border:3px solid var(--cream);transition:.25s;font-size:1.7rem}
+.wa:hover{transform:scale(1.1);background:var(--black)}
+.wa svg{width:1em;height:1em;fill:currentColor;stroke:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* responsive */
+@media(max-width:1060px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .plan-grid,.book-grid,.about-grid,.hero-grid{grid-template-columns:1fr}
+  .result{position:static}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .collage{height:340px;max-width:520px}
+  .hero-grid{gap:44px}
+}
+@media(max-width:820px){
+  .burger{display:block}
+  .mclose{display:grid;position:absolute;top:16px;right:18px;width:44px;height:44px;border-radius:50%;border:2px solid var(--cream);place-items:center;color:var(--cream);font-size:1.25rem}
+  .mclose:hover{background:var(--cream);color:var(--black)}
+  .links{position:fixed;inset:0 0 0 auto;width:min(320px,86%);background:var(--black);flex-direction:column;align-items:flex-start;padding:100px 34px;gap:22px;transform:translateX(100%);transition:.35s;border-left:2px solid var(--burg)}
+  .links.open{transform:none}
+  .links a{font-size:1.05rem}
+  .packs{grid-template-columns:1fr;max-width:480px;margin-inline:auto}
+  .gal{columns:2}
+  .faq{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  section{padding:46px 0}
+  .cards,.steps,.tiers,.addons,form .two{grid-template-columns:1fr}
+  .gal{columns:1}
+  .panel,.result{padding:24px 20px}
+  .f-grid{grid-template-columns:1fr}
+  .stats{gap:20px}.stats b{font-size:1.6rem}
+  .guest-row{grid-template-columns:1fr 90px}
+  .collage{height:290px}.badge{width:84px;height:84px;font-size:.5rem}.badge b{font-size:1.2rem}
+  .cta-row .btn{width:100%}
+}
+@media print{
+  header.nav,.wa,.ribbon,.hero,.services,#packages,#gallery,#process,#faq,.cta,footer,.toast,.mini-actions,.result .btn{display:none!important}
+  section{padding:20px 0}.rv{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body id="top">
+
+<!-- ICON SPRITE (stroke icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-rings" viewBox="0 0 24 24"><circle cx="8.5" cy="14.5" r="5.5"/><circle cx="15.5" cy="14.5" r="5.5"/><path d="M6.5 5.5 8 3.5l1.5 2"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3M12 8v3M17 8v3"/><path d="M7 4h.01M12 4h.01M17 4h.01"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+  <symbol id="i-wine" viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 3v4M17 5h4M5 17v4M3 19h4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h8"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/><path d="M21 12v4h-4a2 2 0 0 1 0-4z"/></symbol>
+  <symbol id="i-party" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01M22 8h.01M15 2h.01M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="MESH VENTURES home">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#6b1426" stroke="#f5eedf" stroke-width="2"/><path d="M16 45V19l16 16 16-16v26" fill="none" stroke="#f5eedf" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span><b>MESH</b><small>VENTURES</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i></button>
+    <nav class="links" id="links">
+      <button class="mclose" id="menuClose" type="button" aria-label="Close menu"><svg class="ic"><use href="#i-x"/></svg></button>
+      <a href="#about">About</a>
+      <a href="#services">Events</a>
+      <a href="#packages">Packages</a>
+      <a href="#planner">Budget</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="btn btn-cream">Book now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Event planning &amp; production · Kenya</span>
+      <h1>Moments worth <em>celebrating,</em> perfectly planned.</h1>
+      <p class="lead">From heartfelt ruracios and elegant weddings to lively birthday parties and polished corporate evenings, MESH VENTURES designs, plans and runs your day, so you can simply enjoy it.</p>
+      <div class="cta-row">
+        <a href="#planner" class="btn btn-cream">Plan my budget <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#book" class="btn btn-ghost">Book an event</a>
+      </div>
+      <div class="stats">
+        <div><b data-count="8">0</b><span>Event types</span></div>
+        <div><b>50K</b><span>Starting price (KES)</span></div>
+        <div><b data-count="30" data-suffix="%">0</b><span>Deposit to secure date</span></div>
+      </div>
+    </div>
+    <aside class="price-card rv d2">
+      <span class="from">Starting from</span>
+      <div class="big">KES 50,000</div>
+      <h3>Your celebration, your budget</h3>
+      <ul class="chk">
+        <li>Ruracios, weddings, birthdays &amp; more</li>
+        <li>Free budget planner, instant estimate</li>
+        <li>Dedicated coordinator on the day</li>
+        <li>Flexible packages that grow with you</li>
+      </ul>
+      <a href="#planner" class="btn btn-cream" style="width:100%">Get my estimate</a>
+    </aside>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div id="ribbon"></div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="collage rv">
+      <div class="c c1" id="a1"></div>
+      <div class="c c2" id="a2"></div>
+      <div class="badge"><div><b>50K</b>Events<br>from KES</div></div>
+    </div>
+    <div class="rv d1">
+      <span class="eyebrow">About us</span>
+      <h2>We turn your vision into a day you <em>remember.</em></h2>
+      <p class="muted lead">MESH VENTURES is an events company built around one idea: every family, couple and company deserves a beautiful celebration at a price that makes sense. We handle the details, from décor and sound to timelines and guests, with warmth and precision.</p>
+      <div class="pillars">
+        <div class="pillar"><span class="ibox"><svg class="ic"><use href="#i-target"/></svg></span><div><b>Budget-first planning</b><span class="muted">We start with what you can spend and design the best day within it.</span></div></div>
+        <div class="pillar"><span class="ibox"><svg class="ic"><use href="#i-users"/></svg></span><div><b>Culture-respecting</b><span class="muted">From ruracio protocol to modern receptions, we honour your traditions.</span></div></div>
+        <div class="pillar"><span class="ibox"><svg class="ic"><use href="#i-sparkle"/></svg></span><div><b>Stress-free delivery</b><span class="muted">A coordinator on the ground so you stay present with your people.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">What we plan</span>
+      <h2>Every celebration, <em>beautifully done</em></h2>
+      <p class="muted lead">Pick an event to start planning. All services begin at KES 50,000 and scale to your guest list and wishes.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="dark" id="packages">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Packages</span>
+      <h2>Choose the level that <em>fits you</em></h2>
+      <p class="muted lead">Three clear tiers, applicable to any event type. Add extras in the budget planner to customise.</p>
+    </div>
+    <div class="packs" id="packs"></div>
+  </div>
+</section>
+
+<!-- PLANNER -->
+<section class="planner" id="planner">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Budget planner</span>
+      <h2>Build your budget in <em>two minutes</em></h2>
+      <p class="muted lead">Choose your event, guests and extras. Your estimate updates live, then send it straight to booking.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="panel rv">
+        <div class="step">
+          <label for="pEvent">1 · What are we celebrating?</label>
+          <select id="pEvent" class="field"></select>
+        </div>
+        <div class="step">
+          <label>2 · Choose a package</label>
+          <div class="tiers" id="pTiers"></div>
+        </div>
+        <div class="step">
+          <label for="pGuestsNum">3 · Expected guests</label>
+          <div class="guest-row">
+            <input type="range" id="pGuests" min="10" max="500" step="5" value="50" aria-label="Guests slider">
+            <input type="number" id="pGuestsNum" class="field" min="10" max="2000" value="50">
+          </div>
+          <p class="muted" id="guestHint" style="font-size:.84rem;margin-top:8px"></p>
+        </div>
+        <div class="step">
+          <label>4 · Add extras</label>
+          <div class="addons" id="pAddons"></div>
+          <label class="switch"><input type="checkbox" id="pBuffer" checked> Include 10% contingency buffer (recommended)</label>
+        </div>
+        <div class="step">
+          <label for="pBudget">5 · Your target budget (optional)</label>
+          <input type="number" id="pBudget" class="field" min="0" step="1000" placeholder="e.g. 150000 (KES)">
+        </div>
+      </div>
+
+      <aside class="result rv d1" aria-live="polite">
+        <h3>Your estimate</h3>
+        <div class="total" id="rTotal">KES 50,000</div>
+        <div class="total-note" id="rNote">Estimated total · final quote after consultation</div>
+        <ul class="lines" id="rLines"></ul>
+        <div class="sum">
+          <div><span>Subtotal</span><b id="rSub"></b></div>
+          <div><span>Contingency (10%)</span><b id="rBuf"></b></div>
+          <div><span>Deposit to secure date (30%)</span><b id="rDep"></b></div>
+          <div><span>Approx. per guest</span><b id="rPer"></b></div>
+        </div>
+        <div class="meter" id="rMeter" hidden></div>
+        <a href="#book" class="btn btn-cream">Continue to booking <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <div class="mini-actions">
+          <button class="btn btn-ghost" id="shareWa" type="button">Send on WhatsApp</button>
+          <button class="btn btn-ghost" id="printBtn" type="button">Print / Save PDF</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="dark" id="gallery">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Inspiration gallery</span>
+      <h2>Ideas &amp; <em>atmospheres</em></h2>
+      <p class="muted lead">A taste of the styles we can create for you. Tap any image to view it larger.</p>
+    </div>
+    <div class="filters rv" id="filters"></div>
+    <div class="gal" id="gal"></div>
+    <div class="center-btn"><button class="btn btn-ghost" id="moreBtn">Show more</button></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">How it works</span>
+      <h2>From first hello to <em>final dance</em></h2>
+    </div>
+    <div class="steps">
+      <div class="st rv"><span class="n">01</span><span class="ibox"><svg class="ic"><use href="#i-calc"/></svg></span><h3>Plan your budget</h3><p>Use the planner to see what your celebration could cost in minutes.</p></div>
+      <div class="st rv d1"><span class="n">02</span><span class="ibox"><svg class="ic"><use href="#i-cal"/></svg></span><h3>Place your booking</h3><p>Share your date, venue and wishes. We confirm availability quickly.</p></div>
+      <div class="st rv d2"><span class="n">03</span><span class="ibox"><svg class="ic"><use href="#i-wallet"/></svg></span><h3>Secure with deposit</h3><p>A 30% deposit holds your date. The balance is agreed before the event.</p></div>
+      <div class="st rv d3"><span class="n">04</span><span class="ibox"><svg class="ic"><use href="#i-party"/></svg></span><h3>Enjoy your day</h3><p>Our team sets up, runs the programme and clears up. You celebrate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div class="rv">
+      <span class="eyebrow">Place a booking</span>
+      <h2>Let's reserve <em>your date</em></h2>
+      <p class="muted lead">Fill in the details and we'll confirm availability and send a formal quotation. Your budget estimate is attached automatically.</p>
+      <div class="snap">
+        <h3>Your plan so far</h3>
+        <dl id="snap"></dl>
+        <p style="margin-top:14px;font-size:.86rem"><a href="#planner">Change event, package or extras</a></p>
+      </div>
+      <ul class="contact-list">
+        <li><span class="ibox"><svg class="ic"><use href="#i-phone"/></svg></span><span id="cPhone"></span></li>
+        <li><span class="ibox"><svg class="ic"><use href="#i-mail"/></svg></span><span id="cMail"></span></li>
+        <li><span class="ibox"><svg class="ic"><use href="#i-pin"/></svg></span><span>Nairobi &amp; surrounding counties. We travel for your event.</span></li>
+        <li><span class="ibox"><svg class="ic"><use href="#i-clock"/></svg></span><span>Mon – Sat · 8:00 AM – 6:00 PM (EAT)</span></li>
+      </ul>
+    </div>
+
+    <div class="panel rv d1">
+      <h3>Booking details</h3>
+      <form id="bookForm" novalidate>
+        <div class="two">
+          <div class="g"><label class="lab" for="bName">Full name</label><input class="field" id="bName" autocomplete="name" placeholder="Your name"><div class="err">Please enter your name.</div></div>
+          <div class="g"><label class="lab" for="bPhone">Phone / WhatsApp</label><input class="field" id="bPhone" type="tel" autocomplete="tel" placeholder="07XX XXX XXX"><div class="err">Enter a valid phone number.</div></div>
+        </div>
+        <div class="two">
+          <div class="g"><label class="lab" for="bEmail">Email (optional)</label><input class="field" id="bEmail" type="email" autocomplete="email" placeholder="you@email.com"><div class="err">Enter a valid email.</div></div>
+          <div class="g"><label class="lab" for="bDate">Event date</label><input class="field" id="bDate" type="date"><div class="err">Choose a future date.</div></div>
+        </div>
+        <div class="two">
+          <div class="g"><label class="lab" for="bVenue">Venue / location</label><input class="field" id="bVenue" placeholder="e.g. Thika, Karen, home compound"><div class="err">Tell us where it's happening.</div></div>
+          <div class="g"><label class="lab" for="bTime">Preferred start time</label><input class="field" id="bTime" type="time" value="10:00"></div>
+        </div>
+        <div class="g"><label class="lab" for="bNotes">Tell us your vision</label><textarea class="field" id="bNotes" rows="4" placeholder="Theme, colours, special requests, cultural requirements…"></textarea></div>
+        <label class="switch" style="margin:0 0 18px"><input type="checkbox" id="bConsent" checked> I agree to be contacted about this booking.</label>
+        <button class="btn btn-burg" type="submit" style="width:100%">Place booking request <svg class="ic"><use href="#i-arrow"/></svg></button>
+        <p class="note">No payment is taken here. A 30% deposit is requested only after we confirm your date.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently <em>asked</em></h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>What does the KES 50,000 starting price include?</summary><p>The Essential package covers planning consultation, a themed décor setup, event-day coordination and set-up/teardown for up to 50 guests. Catering, entertainment, photography and other extras can be added in the budget planner.</p></details>
+      <details><summary>Is the price the same for every event type?</summary><p>Every event type starts from KES 50,000. Your final quote depends on the package, number of guests, venue and the extras you choose.</p></details>
+      <details><summary>How do I secure my date?</summary><p>Place a booking request, then we confirm availability and send a quotation. A 30% deposit holds your date, and the balance is settled before the event. Payment details are shared with your confirmation.</p></details>
+      <details><summary>Can you plan a ruracio with our family customs?</summary><p>Yes. We coordinate seating, décor, MC and programme around your family and community traditions, and work closely with the elders and organisers.</p></details>
+      <details><summary>Do you work outside Nairobi?</summary><p>Yes, we plan events in surrounding counties and across Kenya. Transport and accommodation for our team may be added for distant venues.</p></details>
+      <details><summary>Can I change my date or package later?</summary><p>Changes are possible subject to availability. Tell us as early as you can and we'll do our best to accommodate you.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="wrap rv">
+    <span class="eyebrow">Ready when you are</span>
+    <h2>Let's create something <em>unforgettable.</em></h2>
+    <p class="lead" style="margin:10px auto 0;color:var(--cream-d)">Check your budget, pick your date, and leave the rest to MESH VENTURES.</p>
+    <div class="cta-row">
+      <a href="#planner" class="btn btn-cream">Plan my budget</a>
+      <a href="#book" class="btn btn-ghost">Book an event</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:16px">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#6b1426" stroke="#f5eedf" stroke-width="2"/><path d="M16 45V19l16 16 16-16v26" fill="none" stroke="#f5eedf" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span><b>MESH</b><small>VENTURES</small></span>
+        </a>
+        <p>Ruracios, weddings, birthdays and corporate events, planned with heart and delivered with precision.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Events</a></li><li><a href="#packages">Packages</a></li><li><a href="#planner">Budget planner</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li id="fPhone"></li><li id="fMail"></li><li>Nairobi, Kenya</li><li>Mon – Sat · 8AM – 6PM</li></ul></div>
+      <div><h4>Newsletter</h4><p>Event ideas and seasonal offers, straight to your inbox.</p>
+        <form class="news" id="newsForm"><input type="email" id="nEmail" placeholder="Your email" aria-label="Email address" required><button class="btn btn-cream" style="padding:10px 20px" type="submit">Join</button></form></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> MESH VENTURES. All rights reserved.</span><span>Crafted for unforgettable celebrations</span></div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa" id="waFloat" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.8 1.5 5.9 1.5 6.9 0 12.6-5.6 12.6-12.5C28.9 8.6 23 3 16 3zm0 22.9c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.4 1.2 1.2-4.3-.3-.4a10.300 10.300 0 0 1-1.600-5.500C5.200 9.700 10 5.200 16 5.200S26.800 9.700 26.800 15.500 22 25.900 16 25.900zm5.800-7.700c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.500 8.500 0 0 1-4.200-3.700c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.400 1 2.800 1.200 3 2 3.100 4.900 4.300c1.800.8 2.500.8 3.400.7.5-.1 1.700-.7 1.900-1.400s.2-1.200.2-1.400-.3-.2-.6-.4z"/></svg>
+</a>
+
+<!-- Lightbox / Modal / Toast -->
+<div class="lightbox" id="lb" role="dialog" aria-label="Image preview"><button class="x" id="lbx" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button><div class="pic" id="lbPic"></div><p id="lbCap"></p></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mbox">
+    <div class="tick"><svg class="ic" style="stroke-width:2.4"><use href="#i-check"/></svg></div>
+    <h3 id="mTitle">Booking request ready!</h3>
+    <p class="muted">Thank you, <b id="mName"></b>. One last step: send your request to our team to confirm it.</p>
+    <div class="ref" id="mRef"></div>
+    <p class="small" id="mSum"></p>
+    <div class="acts">
+      <a class="btn btn-burg" id="mWa" target="_blank" rel="noopener">Send on WhatsApp</a>
+      <a class="btn btn-line" id="mMail">Send by email</a>
+      <button class="btn" id="mClose" style="color:var(--muted)">Close</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ============ CONFIG: edit these ============ */
+const CONFIG = {
+  brand: 'MESH VENTURES',
+  whatsapp: '254700000000',            // WhatsApp number, international format, no "+"
+  phoneDisplay: '+254 700 000 000',
+  email: 'hello@meshventures.co.ke',
+  baseFrom: 50000,                     // starting price (KES)
+  bufferPct: 0.10,
+  depositPct: 0.30,
+  extraGuestRate: 500                  // KES per guest above the package's included guests
+};
+
+const EVENTS = [
+  {id:'ruracio',   icon:'i-users',    name:'Ruracio & Dowry Ceremonies',  desc:'Respectful, beautifully organised traditional ceremonies: setup, seating, MC and décor for both families.'},
+  {id:'wedding',   icon:'i-rings',    name:'Weddings',                    desc:'Church, garden or reception: complete planning, décor and day-of coordination for your big day.'},
+  {id:'birthday',  icon:'i-cake',     name:'Birthday Parties',            desc:'Kids to milestone adults: themes, balloons, cakes, entertainment and a stress-free party.'},
+  {id:'shower',    icon:'i-gift',     name:'Baby & Bridal Showers',       desc:'Intimate, stylish showers with themed décor, games, setup and gifting tables.'},
+  {id:'corporate', icon:'i-building', name:'Corporate & Launches',        desc:'Team dinners, product launches, AGMs and brand activations delivered professionally.'},
+  {id:'graduation',icon:'i-cap',      name:'Graduations & Send-offs',     desc:'Celebrate achievements and farewells with warm, memorable gatherings.'},
+  {id:'anniversary',icon:'i-wine',    name:'Anniversaries & Family Days', desc:'Romantic dinners, reunions and family celebrations with tasteful details.'},
+  {id:'engagement',icon:'i-gem',      name:'Engagements & Proposals',     desc:'Intimate setups and surprise proposals designed to make the moment unforgettable.'}
+];
+
+const TIERS = [
+  {id:'essential', name:'Essential', mult:1,   guests:50,  note:'Up to 50 guests',  pop:false,
+   items:['Planning consultation','Themed décor setup','Day-of coordinator','Set-up &amp; teardown','Vendor sourcing at your budget']},
+  {id:'signature', name:'Signature', mult:2.4, guests:100, note:'Up to 100 guests', pop:true,
+   items:['Everything in Essential','Full décor &amp; floral styling','MC, sound &amp; run-of-show','2 on-site coordinators','Guest flow &amp; ushering plan']},
+  {id:'royal',     name:'Royal',     mult:5,   guests:200, note:'Up to 200 guests', pop:false,
+   items:['Everything in Signature','Premium décor &amp; lighting','Photography &amp; video team','Live entertainment slot','Dedicated planning team']}
+];
+
+const ADDONS = [
+  {id:'catering', name:'Catering',             sub:'per guest',      price:900,   perGuest:true},
+  {id:'seating',  name:'Tent, chairs & tables',sub:'per guest',      price:250,   perGuest:true},
+  {id:'decor',    name:'Décor upgrade',        sub:'extra florals & styling', price:25000},
+  {id:'mc',       name:'MC & sound system',    sub:'full day',       price:15000},
+  {id:'dj',       name:'DJ & party lights',    sub:'evening',        price:20000},
+  {id:'photo',    name:'Photography',          sub:'full coverage',  price:25000},
+  {id:'video',    name:'Videography',          sub:'highlight film', price:35000},
+  {id:'cake',     name:'Celebration cake',     sub:'custom design',  price:8000},
+  {id:'transport',name:'Transport / car hire', sub:'guest or couple',price:12000},
+  {id:'cards',    name:'Invitations & ushers', sub:'design + staff', price:10000}
+];
+
+const GALLERY = [
+  {cat:'Weddings', cap:'Garden wedding styling',     img:'photo-1519741497674-611481863552', g:'#6b1426', h:'t2'},
+  {cat:'Birthdays',cap:'Colourful birthday party',   img:'photo-1530103862676-de8c9debad1d', g:'#141010'},
+  {cat:'Ruracio',  cap:'Traditional ceremony décor', img:'photo-1469371670807-013ccf25f16a', g:'#6b1426', h:'t3'},
+  {cat:'Weddings', cap:'Reception table design',     img:'photo-1511795409834-ef04bbd61622', g:'#141010'},
+  {cat:'Corporate',cap:'Corporate evening',          img:'photo-1505236858219-8359eb29e329', g:'#6b1426', h:'t2'},
+  {cat:'Birthdays',cap:'Confetti celebration',       img:'photo-1492684223066-81342ee5ff30', g:'#141010'},
+  {cat:'Weddings', cap:'Elegant reception hall',     img:'photo-1478146896981-b80fe463b330', g:'#6b1426', h:'t3'},
+  {cat:'Ruracio',  cap:'Floral welcome setup',       img:'photo-1522673607200-164d1b6ce486', g:'#141010'},
+  {cat:'Corporate',cap:'Launch & stage lighting',    img:'photo-1464366400600-7168b8af9bc3', g:'#6b1426', h:'t2'}
+];
+const U = id => 'https://images.unsplash.com/' + id + '?auto=format&fit=crop&w=1000&q=70';
+
+/* ============ helpers ============ */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const fmt = n => 'KES ' + Math.round(n).toLocaleString('en-KE');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ico = id => '<svg class="ic"><use href="#' + id + '"/></svg>';
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),3200)}
+const waLink = text => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text);
+
+/* ============ state ============ */
+const state = {event:'wedding', tier:'essential', guests:50, addons:new Set(), buffer:true, budget:0};
+const evt  = () => EVENTS.find(e => e.id === state.event);
+const tier = () => TIERS.find(t => t.id === state.tier);
+
+function calc(){
+  const e = evt(), t = tier(), lines = [];
+  const base = CONFIG.baseFrom * t.mult;
+  lines.push({label: e.name.split(' & ')[0] + ' · ' + t.name + ' package', amt: base});
+  const extra = Math.max(0, state.guests - t.guests);
+  if (extra) lines.push({label: extra + ' additional guests', amt: extra * CONFIG.extraGuestRate});
+  ADDONS.filter(a => state.addons.has(a.id)).forEach(a => {
+    lines.push({label: a.name + (a.perGuest ? ' × ' + state.guests : ''), amt: a.perGuest ? a.price * state.guests : a.price});
+  });
+  const subtotal = lines.reduce((s, l) => s + l.amt, 0);
+  const buffer = state.buffer ? subtotal * CONFIG.bufferPct : 0;
+  const total = subtotal + buffer;
+  return {lines, subtotal, buffer, total, deposit: total * CONFIG.depositPct, perGuest: total / Math.max(1, state.guests)};
+}
+
+/* ============ build UI ============ */
+function buildStatic(){
+  const r = EVENTS.map(e => '<span>' + e.name.split(' & ')[0] + '</span>').join('');
+  $('#ribbon').innerHTML = r + r + r + r;
+  $('#cards').innerHTML = EVENTS.map((e, i) => `
+    <article class="card rv d${i % 4}">
+      <span class="ibox">${ico(e.icon)}</span><h3>${e.name}</h3><p>${e.desc}</p>
+      <div class="pr">Starting from<b>${fmt(CONFIG.baseFrom)}</b></div>
+      <a href="#planner" class="go" data-ev="${e.id}">Plan this event ${ico('i-arrow')}</a>
+    </article>`).join('');
+  $('#packs').innerHTML = TIERS.map(t => `
+    <div class="pack ${t.pop ? 'pop' : ''} rv">
+      ${t.pop ? '<span class="tag">Most popular</span>' : ''}
+      <h3>${t.name}</h3><div class="amt">${fmt(CONFIG.baseFrom * t.mult)}</div><div class="sub">starting price · ${t.note}</div>
+      <ul class="chk">${t.items.map(i => '<li>' + i + '</li>').join('')}</ul>
+      <a href="#planner" class="btn btn-cream" data-tier="${t.id}">Choose ${t.name}</a>
+    </div>`).join('');
+  $('#pEvent').innerHTML = EVENTS.map(e => `<option value="${e.id}">${e.name}</option>`).join('');
+  $('#pEvent').value = state.event;
+  $('#pTiers').innerHTML = TIERS.map(t => `
+    <label class="tier"><input type="radio" name="tier" value="${t.id}" ${t.id === state.tier ? 'checked' : ''}>
+    <span><b>${t.name}</b><small>${t.note}</small><em>from ${fmt(CONFIG.baseFrom * t.mult)}</em></span></label>`).join('');
+  $('#pAddons').innerHTML = ADDONS.map(a => `
+    <label class="addon"><input type="checkbox" value="${a.id}"><span><div>${a.name}<small>${a.sub}</small></div><em>+${fmt(a.price)}</em></span></label>`).join('');
+  const cats = ['All', ...new Set(GALLERY.map(g => g.cat))];
+  $('#filters').innerHTML = cats.map((c, i) => `<button class="chip ${i === 0 ? 'on' : ''}" data-cat="${c}">${c}</button>`).join('');
+  $('#gal').innerHTML = GALLERY.map(g => `<div class="tile ${g.h || ''}" data-cat="${g.cat}" data-cap="${g.cap}" data-img="${U(g.img)}" style="--img:url('${U(g.img)}');--g:${g.g}" role="button" tabindex="0" aria-label="${g.cap}"></div>`).join('');
+  $('.hero').style.setProperty('--hero', "url('" + U('photo-1511795409834-ef04bbd61622') + "')");
+  $('#a1').style.setProperty('--a1', "url('" + U('photo-1519741497674-611481863552') + "')");
+  $('#a2').style.setProperty('--a2', "url('" + U('photo-1530103862676-de8c9debad1d') + "')");
+  $('.cta').style.setProperty('--ctabg', "url('" + U('photo-1478146896981-b80fe463b330') + "')");
+  $('#cPhone').innerHTML = '<a href="tel:+' + CONFIG.whatsapp + '">' + CONFIG.phoneDisplay + '</a>';
+  $('#cMail').innerHTML = '<a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>';
+  $('#fPhone').innerHTML = '<a href="tel:+' + CONFIG.whatsapp + '">' + CONFIG.phoneDisplay + '</a>';
+  $('#fMail').innerHTML = '<a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>';
+  $('#waFloat').href = waLink('Hello ' + CONFIG.brand + ', I would like to plan an event.');
+  $('#yr').textContent = new Date().getFullYear();
+  const d = new Date(); d.setDate(d.getDate() + 1);
+  $('#bDate').min = d.toISOString().slice(0, 10);
+}
+
+/* ============ render planner ============ */
+function render(){
+  const c = calc(), t = tier();
+  $('#rTotal').textContent = fmt(c.total);
+  const max = Math.max(...c.lines.map(l => l.amt));
+  $('#rLines').innerHTML = c.lines.map(l => `
+    <li><div class="row"><span>${esc(l.label)}</span><b>${fmt(l.amt)}</b></div><div class="bar"><i style="width:${Math.max(6, l.amt / max * 100)}%"></i></div></li>`).join('');
+  $('#rSub').textContent = fmt(c.subtotal);
+  $('#rBuf').textContent = state.buffer ? fmt(c.buffer) : 'Not included';
+  $('#rDep').textContent = fmt(c.deposit);
+  $('#rPer').textContent = fmt(c.perGuest);
+  $('#guestHint').textContent = state.guests <= t.guests
+    ? 'Your ' + t.name + ' package covers up to ' + t.guests + ' guests.'
+    : (state.guests - t.guests) + ' guests above the ' + t.name + ' package limit are added at ' + fmt(CONFIG.extraGuestRate) + ' each.';
+  const m = $('#rMeter');
+  if (state.budget > 0){
+    const diff = state.budget - c.total;
+    m.hidden = false;
+    m.className = 'meter ' + (diff >= 0 ? 'ok' : 'over');
+    m.textContent = diff >= 0
+      ? 'Within your budget, with ' + fmt(diff) + ' to spare.'
+      : 'Over your budget by ' + fmt(-diff) + '. Try a smaller package, fewer extras or the Essential tier.';
+  } else m.hidden = true;
+  const names = ADDONS.filter(a => state.addons.has(a.id)).map(a => a.name);
+  $('#snap').innerHTML = `
+    <dt>Event</dt><dd>${esc(evt().name)}</dd>
+    <dt>Package</dt><dd>${t.name}</dd>
+    <dt>Guests</dt><dd>${state.guests}</dd>
+    <dt>Extras</dt><dd>${names.length ? esc(names.join(', ')) : 'None'}</dd>
+    <dt>Deposit (30%)</dt><dd>${fmt(c.deposit)}</dd>
+    <dt class="t">Estimate</dt><dd class="t">${fmt(c.total)}</dd>`;
+}
+
+function planText(){
+  const c = calc(), names = ADDONS.filter(a => state.addons.has(a.id)).map(a => a.name);
+  return 'Event: ' + evt().name + '\nPackage: ' + tier().name + '\nGuests: ' + state.guests +
+    '\nExtras: ' + (names.length ? names.join(', ') : 'None') +
+    '\nEstimated total: ' + fmt(c.total) + '\nDeposit (30%): ' + fmt(c.deposit);
+}
+
+/* ============ events ============ */
+function bind(){
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-ev]');
+    if (a){ state.event = a.dataset.ev; $('#pEvent').value = state.event; render(); }
+    const b = e.target.closest('[data-tier]');
+    if (b){ state.tier = b.dataset.tier; $('input[name=tier][value=' + state.tier + ']').checked = true; render(); }
+  });
+  $('#pEvent').addEventListener('change', e => { state.event = e.target.value; render(); });
+  $$('input[name=tier]').forEach(r => r.addEventListener('change', () => { state.tier = r.value; render(); }));
+  const setGuests = v => {
+    v = Math.min(2000, Math.max(10, parseInt(v) || 10));
+    state.guests = v; $('#pGuestsNum').value = v; $('#pGuests').value = Math.min(v, 500); render();
+  };
+  $('#pGuests').addEventListener('input', e => setGuests(e.target.value));
+  $('#pGuestsNum').addEventListener('input', e => { if (e.target.value !== '') setGuests(e.target.value); });
+  $('#pAddons').addEventListener('change', e => {
+    e.target.checked ? state.addons.add(e.target.value) : state.addons.delete(e.target.value); render();
+  });
+  $('#pBuffer').addEventListener('change', e => { state.buffer = e.target.checked; render(); });
+  $('#pBudget').addEventListener('input', e => { state.budget = parseFloat(e.target.value) || 0; render(); });
+
+  $('#shareWa').addEventListener('click', () => window.open(waLink('Hello ' + CONFIG.brand + ', here is my event budget estimate:\n\n' + planText()), '_blank', 'noopener'));
+  $('#printBtn').addEventListener('click', () => window.print());
+
+  const nav = $('#nav'), burger = $('#burger'), links = $('#links');
+  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 40);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  const setMenu = o => {
+    links.classList.toggle('open', o); burger.classList.toggle('open', o); $('#scrim').classList.toggle('on', o);
+    burger.setAttribute('aria-expanded', o); document.body.style.overflow = o ? 'hidden' : '';
+  };
+  burger.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+  $('#menuClose').addEventListener('click', () => setMenu(false));
+  $('#scrim').addEventListener('click', () => setMenu(false));
+  links.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  addEventListener('resize', () => { if (innerWidth > 820) setMenu(false); });
+
+  let cat = 'All', expanded = false;
+  const LIMIT = 6;
+  const applyGal = () => {
+    let shown = 0;
+    $$('.tile').forEach(t => {
+      const match = cat === 'All' || t.dataset.cat === cat;
+      const vis = match && (expanded || shown < LIMIT);
+      if (match) shown++;
+      t.classList.toggle('hide', !vis);
+    });
+    const total = $$('.tile').filter(t => cat === 'All' || t.dataset.cat === cat).length;
+    $('#moreBtn').style.display = total > LIMIT && !expanded ? '' : 'none';
+  };
+  $('#filters').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    $$('.chip').forEach(c => c.classList.remove('on')); b.classList.add('on'); cat = b.dataset.cat; applyGal();
+  });
+  $('#moreBtn').addEventListener('click', () => { expanded = true; applyGal(); });
+  applyGal();
+  const openLb = t => { $('#lbPic').style.backgroundImage = "url('" + t.dataset.img + "')"; $('#lbCap').textContent = t.dataset.cap; $('#lb').classList.add('on'); };
+  $('#gal').addEventListener('click', e => { const t = e.target.closest('.tile'); if (t) openLb(t); });
+  $('#gal').addEventListener('keydown', e => { if (e.key === 'Enter'){ const t = e.target.closest('.tile'); if (t) openLb(t); } });
+  const closeLb = () => $('#lb').classList.remove('on');
+  $('#lbx').addEventListener('click', closeLb);
+  $('#lb').addEventListener('click', e => { if (e.target.id === 'lb') closeLb(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape'){ closeLb(); $('#modal').classList.remove('on'); } });
+
+  $('#newsForm').addEventListener('submit', e => {
+    e.preventDefault();
+    try { const l = JSON.parse(localStorage.getItem('mesh_news') || '[]'); l.push({email: $('#nEmail').value, at: Date.now()}); localStorage.setItem('mesh_news', JSON.stringify(l)); } catch(_){}
+    e.target.reset(); toast('Thank you for subscribing!');
+  });
+
+  const form = $('#bookForm');
+  const mark = (id, ok) => { const g = $('#' + id).closest('.g'); g.classList.toggle('bad', !ok); return ok; };
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#bName').value.trim(), phone = $('#bPhone').value.trim(), email = $('#bEmail').value.trim();
+    const date = $('#bDate').value, venue = $('#bVenue').value.trim();
+    const digits = phone.replace(/\D/g, '');
+    const okDate = date && new Date(date) > new Date();
+    const checks = [
+      mark('bName', name.length >= 2),
+      mark('bPhone', digits.length >= 9 && digits.length <= 15),
+      mark('bEmail', !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+      mark('bDate', !!okDate),
+      mark('bVenue', venue.length >= 2)
+    ];
+    if (checks.includes(false)){ toast('Please check the highlighted fields.'); const f = form.querySelector('.g.bad .field'); if (f) f.focus(); return; }
+    if (!$('#bConsent').checked){ toast('Please tick the consent box to continue.'); return; }
+
+    const c = calc();
+    const ref = 'MV-' + new Date().toISOString().slice(2, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+    const niceDate = new Date(date).toLocaleDateString('en-KE', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+    const msg = 'Hello ' + CONFIG.brand + ', I would like to book an event.\n\nRef: ' + ref +
+      '\nName: ' + name + '\nPhone: ' + phone + (email ? '\nEmail: ' + email : '') +
+      '\nDate: ' + niceDate + ' at ' + ($('#bTime').value || 'TBC') +
+      '\nVenue: ' + venue + '\n\n' + planText() +
+      ($('#bNotes').value.trim() ? '\n\nNotes: ' + $('#bNotes').value.trim() : '');
+    try {
+      const all = JSON.parse(localStorage.getItem('mesh_bookings') || '[]');
+      all.push({ref, name, phone, email, date, venue, total: c.total, at: Date.now()});
+      localStorage.setItem('mesh_bookings', JSON.stringify(all));
+    } catch(_){}
+    $('#mName').textContent = name.split(' ')[0];
+    $('#mRef').textContent = ref;
+    $('#mSum').textContent = evt().name + ' · ' + tier().name + ' · ' + state.guests + ' guests · ' + fmt(c.total) + ' · ' + niceDate;
+    $('#mWa').href = waLink(msg);
+    $('#mMail').href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('Booking request ' + ref) + '&body=' + encodeURIComponent(msg);
+    $('#modal').classList.add('on');
+    form.reset(); $('#bTime').value = '10:00'; $('#bConsent').checked = true;
+  });
+  $$('#bookForm .field').forEach(f => f.addEventListener('input', () => f.closest('.g')?.classList.remove('bad')));
+  $('#mClose').addEventListener('click', () => $('#modal').classList.remove('on'));
+  $('#modal').addEventListener('click', e => { if (e.target.id === 'modal') $('#modal').classList.remove('on'); });
+}
+
+/* ============ reveal + counters ============ */
+function animate(){
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }), {threshold:.12});
+  $$('.rv').forEach(el => io.observe(el));
+  $$('[data-count]').forEach(el => {
+    const end = +el.dataset.count, suf = el.dataset.suffix || '', t0 = performance.now(), dur = 1600;
+    const tick = now => { const p = Math.min(1, (now - t0) / dur); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  });
+}
+
+buildStatic(); bind(); render(); animate();
+</script>
+</body>
+</html>
